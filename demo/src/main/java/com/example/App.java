@@ -1,3 +1,5 @@
+package com.example;
+
 import java.util.Scanner;
 
 public class App {
@@ -22,8 +24,12 @@ public class App {
             System.out.print("Password: ");
             String passwordLogin = scanner.nextLine();
             resultadoLogin = usuario.login(usuarioLogin, passwordLogin);
+            if (resultadoLogin == true) {
+                System.out.println("Haz iniciado sesión correctamente");
+            } else {
+                System.out.println("ERROR: Inicio de sesión incorrecto, intentelo de nuevo");
+            }
         } while (resultadoLogin == false);
-
         scanner.close();
     }
 }
